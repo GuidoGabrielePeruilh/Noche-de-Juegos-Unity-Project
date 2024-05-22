@@ -28,10 +28,10 @@ public class TeamsHandler : MonoBehaviour
         return teamsInfo.Find(x => teamName == x.TeamName);
     }
 
-    public void AddTeam(string teamName, Color color, Sprite sprite)
+    public void AddTeam(string teamName, Color color)
     {
         var instanciaClase = DataPersistance.Instance.LoadJson();
-        var newTeam = new TeamsInfo(teamName, color, sprite);
+        var newTeam = new TeamsInfo(teamName, color);
         instanciaClase.TeamsInfo.Add(newTeam);
         DataPersistance.Instance.SaveData(instanciaClase);
     }

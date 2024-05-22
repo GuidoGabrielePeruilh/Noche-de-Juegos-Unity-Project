@@ -27,13 +27,11 @@ public class TeamsInfo
     public string TeamName;
     public int TeamScore;
     public Color TeamColor = Color.grey;
-    public Sprite teamSprite;
 
-    public TeamsInfo(string teamName, Color color, Sprite sprite)
+    public TeamsInfo(string teamName, Color color)
     {
         TeamName = teamName;
         TeamScore = 0;
         TeamColor = color;
-        teamSprite = sprite;
     }
 }

@@ -12,7 +12,7 @@ public class DataPersistance : Singleton<DataPersistance>
     {
         base.Awake();
         _path = Application.persistentDataPath + "/ScoreJson.json";
-
+        Debug.Log(_path);
         if (File.Exists(_path))
             LoadJson();
         else

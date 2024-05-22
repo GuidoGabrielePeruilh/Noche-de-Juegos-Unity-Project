@@ -96,8 +96,8 @@ public class CanvasHandler : MonoBehaviour
             optionScoreTeamDataList.Add(teamsScoreDropDown.options[0]);
         }
 
-        optionConfigurationTeamDataList.AddRange(teamsData.Select(team => new TMP_Dropdown.OptionData(team.TeamName, team.teamSprite)));
-        optionScoreTeamDataList.AddRange(teamsData.Select(team => new TMP_Dropdown.OptionData(team.TeamName, team.teamSprite)));
+        optionConfigurationTeamDataList.AddRange(teamsData.Select(team => new TMP_Dropdown.OptionData(team.TeamName)));
+        optionScoreTeamDataList.AddRange(teamsData.Select(team => new TMP_Dropdown.OptionData(team.TeamName)));
 
         teamsConfigurationDropDown.options = optionConfigurationTeamDataList;
         teamsScoreDropDown.options = optionScoreTeamDataList;
@@ -136,7 +136,7 @@ public class CanvasHandler : MonoBehaviour
         for (int i = 0; i < teams.Count; i++)
         {
             var objSlider = _teamSliders[i].GetComponent<SliderHandler>();
-            objSlider.SetName(teams[i].TeamName, teams[i].TeamColor, teams[i].teamSprite);
+            objSlider.SetName(teams[i].TeamName, teams[i].TeamColor);
             objSlider.SetSliderValue(teams[i].TeamScore, totalScore);
             _teamSliders[i].SetActive(true);
         }
@@ -153,7 +153,7 @@ public class CanvasHandler : MonoBehaviour
 
         if (GetScoreSelectedTeam(teamsConfigurationDropDown, teamsConfigurationDropDown.value) == GetScoreSelectedTeam(teamsConfigurationDropDown, 0))
         {
-            teamsHandler.AddTeam(newTeamName.text, teamColor, null);
+            teamsHandler.AddTeam(newTeamName.text, teamColor);
         }
         else
         {

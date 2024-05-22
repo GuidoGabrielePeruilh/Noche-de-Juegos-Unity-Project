@@ -11,11 +11,10 @@ public class SliderHandler : MonoBehaviour
     [SerializeField] private Image fillArea;
     [SerializeField] private Slider mySlider;
 
-    public void SetName(string teamName, Color color, Sprite sprite)
+    public void SetName(string teamName, Color color)
     {
         nameText.text = teamName;
-        fillArea.sprite = sprite;
-        fillArea.color = Color.white;
+        fillArea.color = color;
     }
 
     public void SetSliderValue(int currentScore, int maxScore)
